@@ -564,20 +564,20 @@ export const HomePage: React.FC<HomePageProps> = ({ onRouteChange }) => {
           variants={fadeInUp}
         >
           <div>
-            <span className="section-label">Leadership</span>
+            <span className="section-label">People</span>
             <h2 className="text-3xl sm:text-4xl font-display font-bold mt-2 text-white">
-              Meet The <span className="gradient-text">Founder</span>
+              Meet The <span className="gradient-text">Engineers &amp; Specialists</span>
             </h2>
           </div>
           <button
             onClick={() => onRouteChange('team')}
             className="text-sm font-semibold text-[#58A6FF] hover:underline flex items-center gap-1 cursor-pointer"
           >
-            View profile details <ArrowRight size={14} />
+            View full team directory <ArrowRight size={14} />
           </button>
         </motion.div>
 
-        <div className="max-w-xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 max-w-5xl mx-auto gap-8">
           {TEAM.map((mbr, idx) => (
             <motion.div 
               key={idx} 
@@ -585,7 +585,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onRouteChange }) => {
                 navigate(`/${mbr.slug}`);
                 window.scrollTo({ top: 0, behavior: 'smooth' });
               }}
-              className="ss-card overflow-hidden group cursor-pointer hover:border-[#58A6FF]/60"
+              className="ss-card overflow-hidden group cursor-pointer hover:border-[#58A6FF]/60 flex flex-col justify-between"
               variants={{
                 hidden: { opacity: 0, y: 35 },
                 visible: {
@@ -596,37 +596,39 @@ export const HomePage: React.FC<HomePageProps> = ({ onRouteChange }) => {
               }}
               whileHover={{ y: -5, transition: { duration: 0.2 } }}
             >
-              <div className="h-72 overflow-hidden relative bg-[#21262d]">
-                <img
-                  src={mbr.avatarUrl}
-                  alt={mbr.name}
-                  referrerPolicy="no-referrer"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#161b22] via-transparent to-transparent" />
-                <span
-                  className="absolute bottom-3 left-4 text-xs px-3 py-1 rounded-full font-medium border text-white backdrop-blur-md"
-                  style={{ background: `${mbr.color}25`, borderColor: mbr.color }}
-                >
-                  {mbr.role}
-                </span>
-              </div>
-              <div className="p-6 sm:p-8">
-                <h4 className="text-xl sm:text-2xl font-display font-bold text-white mb-1">
-                  {mbr.name}
-                </h4>
-                <p className="text-xs text-[#58A6FF] font-mono mb-3">
-                  Experience: {mbr.experience}
-                </p>
-                <p className="text-sm text-[#8b949e] leading-relaxed mb-4">
-                  {mbr.bio}
-                </p>
-                <div className="pt-4 border-t border-[#30363d]/60 flex items-center justify-between">
-                  <span className="text-xs font-semibold text-[#58A6FF] flex items-center gap-1 group-hover:translate-x-1 transition-transform">
-                    <span>Explore Bento Profile</span>
-                    <ArrowRight size={14} />
+              <div>
+                <div className="h-72 sm:h-80 overflow-hidden relative bg-[#21262d]">
+                  <img
+                    src={mbr.avatarUrl}
+                    alt={mbr.name}
+                    referrerPolicy="no-referrer"
+                    className={`w-full h-full object-cover ${mbr.slug === 'abhinav-sharma' ? 'object-top' : ''} group-hover:scale-105 transition-transform duration-500`}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#161b22] via-transparent to-transparent" />
+                  <span
+                    className="absolute bottom-3 left-4 text-xs px-3 py-1 rounded-full font-medium border text-white backdrop-blur-md"
+                    style={{ background: `${mbr.color}25`, borderColor: mbr.color }}
+                  >
+                    {mbr.role}
                   </span>
                 </div>
+                <div className="p-6 sm:p-8">
+                  <h4 className="text-xl sm:text-2xl font-display font-bold text-white mb-1">
+                    {mbr.name}
+                  </h4>
+                  <p className="text-xs text-[#58A6FF] font-mono mb-3">
+                    Experience: {mbr.experience}
+                  </p>
+                  <p className="text-sm text-[#8b949e] leading-relaxed mb-4">
+                    {mbr.bio}
+                  </p>
+                </div>
+              </div>
+              <div className="px-6 sm:px-8 pb-6 pt-2 border-t border-[#30363d]/60 flex items-center justify-between">
+                <span className="text-xs font-semibold text-[#58A6FF] flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                  <span>{mbr.slug === 'saksham-pandey' ? 'Explore Bento Profile' : 'Explore Profile'}</span>
+                  <ArrowRight size={14} />
+                </span>
               </div>
             </motion.div>
           ))}

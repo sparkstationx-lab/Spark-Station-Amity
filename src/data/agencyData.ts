@@ -295,6 +295,38 @@ export const TEAM: TeamMember[] = [
       whatsapp: "https://wa.me/919111376314",
       github: "https://github.com/protechnicalguruji"
     }
+  },
+  {
+    slug: "abhinav-sharma",
+    name: "Abhinav Sharma",
+    role: "Developer",
+    bio: "Specializing in modern web applications, React engineering, and building responsive, high-performance digital experiences.",
+    tagline: "Full-Stack Software Developer & Web Systems Specialist.",
+    aboutLong: "Abhinav Sharma is a Software Developer at Spark Station. Passionate about building modern, fast, and scalable web applications, Abhinav specializes in React, TypeScript, modern CSS frameworks, and backend integrations. He brings clean code discipline and a user-focused engineering mindset to every client project.",
+    experience: "Full-Stack Development",
+    contact: "mailto:abhinav@sparkstation.agency",
+    skills: ["Full-Stack Development", "React", "TypeScript", "Tailwind CSS", "JavaScript", "Node.js", "API Integration", "UI Engineering"],
+    color: "#38BDF8",
+    avatarUrl: "/abhinav.jpeg",
+    responsibilities: [
+      "Modern Web Application Development",
+      "Frontend Architecture & UI Engineering",
+      "API Integration & Performance Optimization",
+      "Responsive Cross-Browser Interface Design"
+    ],
+    experienceList: [
+      {
+        role: "Software Developer",
+        company: "Spark Station",
+        period: "2024 - Present",
+        desc: "Engineering modern high-performance web applications, responsive user interfaces, and custom digital solutions for clients."
+      }
+    ],
+    socials: {
+      email: "sparkstation.x@gmail.com",
+      linkedin: "https://www.linkedin.com",
+      github: "https://github.com"
+    }
   }
 ];
 

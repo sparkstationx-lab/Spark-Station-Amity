@@ -183,6 +183,14 @@ const routes: RouteDefinition[] = [
     ogImage: `${BASE_URL}/saksham.png`
   },
   {
+    path: '/abhinav-sharma',
+    activeRoute: 'team',
+    component: <TeamMemberProfilePage onRouteChange={() => {}} />,
+    title: 'Abhinav Sharma | Developer at Spark Station',
+    description: 'Official profile of Abhinav Sharma, Developer at Spark Station. Specializing in modern web applications, React engineering, and responsive user interfaces.',
+    ogImage: `${BASE_URL}/abhinav.jpeg`
+  },
+  {
     path: '/gwalior',
     activeRoute: 'home',
     component: <GwaliorPage onRouteChange={() => {}} />,

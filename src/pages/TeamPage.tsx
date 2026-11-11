@@ -45,19 +45,19 @@ export const TeamPage: React.FC<TeamPageProps> = ({ onRouteChange }) => {
       <section className="max-w-4xl mx-auto px-6 text-center mb-16 relative z-10">
         <span className="section-label mb-6">
           <Users size={14} />
-          <span>Leadership</span>
+          <span>The Team</span>
         </span>
         <h1 className="text-4xl sm:text-5xl md:text-6xl font-display font-bold tracking-tight text-white mb-6">
-          Meet Our <span className="gradient-text">Founder &amp; CEO</span>
+          Meet Our <span className="gradient-text">Specialists &amp; Engineers</span>
         </h1>
         <p className="text-lg text-[#8b949e] max-w-2xl mx-auto leading-relaxed">
-          Dedicated to your digital success. You work directly with Saksham Pandey, Founder &amp; CEO at Spark Station, engineering ultra-secure, high-performance web applications tailored to your business goals.
+          Dedicated to your digital success. We engineer high-performance web applications, UI/UX designs, and secure software architectures tailored to your business goals.
         </p>
       </section>
 
-      {/* Team Profile */}
-      <section className="max-w-xl mx-auto px-6 mb-24 relative z-10">
-        <div className="w-full">
+      {/* Team Grid */}
+      <section className="max-w-5xl mx-auto px-6 mb-24 relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {TEAM.map((member, mIdx) => (
             <div
               key={mIdx}
@@ -65,7 +65,7 @@ export const TeamPage: React.FC<TeamPageProps> = ({ onRouteChange }) => {
                 navigate(`/${member.slug}`);
                 window.scrollTo({ top: 0, behavior: 'smooth' });
               }}
-              className="ss-card overflow-hidden flex flex-col justify-between group hover:border-[#58A6FF]/60 cursor-pointer border-[#30363d]/80 hover:shadow-2xl hover:shadow-[#58A6FF]/10 transition-all duration-300"
+              className="ss-card overflow-hidden flex flex-col justify-between group hover:border-[#58A6FF]/60 cursor-pointer border-[#30363d]/80 hover:shadow-2xl hover:shadow-black/40 transition-all duration-300"
             >
               <div>
                 <div className="h-80 sm:h-96 overflow-hidden relative bg-[#21262d]">
@@ -73,7 +73,7 @@ export const TeamPage: React.FC<TeamPageProps> = ({ onRouteChange }) => {
                     src={member.avatarUrl}
                     alt={member.name}
                     referrerPolicy="no-referrer"
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                    className={`w-full h-full object-cover ${member.slug === 'abhinav-sharma' ? 'object-top' : ''} group-hover:scale-105 transition-transform duration-700 ease-out`}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#161b22] via-[#161b22]/20 to-transparent" />
                   <div className="absolute bottom-4 left-5 right-5 flex items-end justify-between">
@@ -90,10 +90,10 @@ export const TeamPage: React.FC<TeamPageProps> = ({ onRouteChange }) => {
                 </div>
 
                 <div className="p-7 sm:p-8">
-                  <h3 className="text-2xl sm:text-3xl font-display font-bold text-white mb-3">
+                  <h3 className="text-2xl font-display font-bold text-white mb-3">
                     {member.name}
                   </h3>
-                  <p className="text-sm sm:text-base text-[#8b949e] leading-relaxed mb-6">
+                  <p className="text-sm text-[#8b949e] leading-relaxed mb-6">
                     {member.bio}
                   </p>
 
@@ -123,10 +123,15 @@ export const TeamPage: React.FC<TeamPageProps> = ({ onRouteChange }) => {
                     navigate(`/${member.slug}`);
                     window.scrollTo({ top: 0, behavior: 'smooth' });
                   }}
-                  className="w-full py-3.5 rounded-xl flex items-center justify-center gap-2 text-sm font-semibold transition-all border no-underline cursor-pointer bg-gradient-to-r from-[#58A6FF]/20 to-[#8B5CF6]/20 text-white border-[#58A6FF]/40 hover:border-[#58A6FF]/70 shadow-lg shadow-[#58A6FF]/10"
+                  className="w-full py-3.5 rounded-xl flex items-center justify-center gap-2 text-sm font-semibold transition-all border no-underline cursor-pointer"
+                  style={{
+                    background: `linear-gradient(135deg, ${member.color}20 0%, rgba(139,92,246,0.15) 100%)`,
+                    color: '#ffffff',
+                    borderColor: `${member.color}50`,
+                  }}
                 >
                   <Users size={16} />
-                  <span>View Bento Profile</span>
+                  <span>{member.slug === 'saksham-pandey' ? 'View Bento Profile' : 'View Profile'}</span>
                   <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
                 </button>
               </div>
