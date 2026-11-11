@@ -8,6 +8,7 @@ import { Icon } from '../components/Icon';
 import { CTASection } from '../components/CTASection';
 import { FAQSection } from '../components/FAQSection';
 import { SEO } from '../components/SEO';
+import { TeamMemberAvatar } from '../components/TeamMemberAvatar';
 
 interface HomePageProps {
   onRouteChange: (route: PageRoute) => void;
@@ -577,7 +578,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onRouteChange }) => {
           </button>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 max-w-5xl mx-auto gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto gap-8">
           {TEAM.map((mbr, idx) => (
             <motion.div 
               key={idx} 
@@ -598,15 +599,13 @@ export const HomePage: React.FC<HomePageProps> = ({ onRouteChange }) => {
             >
               <div>
                 <div className="h-72 sm:h-80 overflow-hidden relative bg-[#21262d]">
-                  <img
-                    src={mbr.avatarUrl}
-                    alt={mbr.name}
-                    referrerPolicy="no-referrer"
-                    className={`w-full h-full object-cover ${mbr.slug === 'abhinav-sharma' ? 'object-top' : ''} group-hover:scale-105 transition-transform duration-500`}
+                  <TeamMemberAvatar
+                    member={mbr}
+                    imgClassName="group-hover:scale-105 transition-transform duration-500"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#161b22] via-transparent to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#161b22] via-transparent to-transparent pointer-events-none" />
                   <span
-                    className="absolute bottom-3 left-4 text-xs px-3 py-1 rounded-full font-medium border text-white backdrop-blur-md"
+                    className="absolute bottom-3 left-4 text-xs px-3 py-1 rounded-full font-medium border text-white backdrop-blur-md pointer-events-none"
                     style={{ background: `${mbr.color}25`, borderColor: mbr.color }}
                   >
                     {mbr.role}

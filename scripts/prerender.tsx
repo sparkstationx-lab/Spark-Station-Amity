@@ -191,6 +191,38 @@ const routes: RouteDefinition[] = [
     ogImage: `${BASE_URL}/abhinav.jpeg`
   },
   {
+    path: '/sanidhya-yadav',
+    activeRoute: 'team',
+    component: <TeamMemberProfilePage onRouteChange={() => {}} />,
+    title: 'Sanidhya Yadav | Business Development & Client Relations at Spark Station',
+    description: 'Official profile of Sanidhya Yadav, Business Development & Client Relations Lead at Spark Station. Handling strategic partnerships, client networking, and relationship management.',
+    ogImage: `${BASE_URL}/apple-touch-icon.png`
+  },
+  {
+    path: '/ananya-raje-singh',
+    activeRoute: 'team',
+    component: <TeamMemberProfilePage onRouteChange={() => {}} />,
+    title: 'Ananya Raje Singh | Marketing & Growth Manager at Spark Station',
+    description: 'Official profile of Ananya Raje Singh, Marketing & Growth Manager at Spark Station. Driving digital marketing campaigns, social media strategy, SEO, and brand growth.',
+    ogImage: `${BASE_URL}/apple-touch-icon.png`
+  },
+  {
+    path: '/aaisha',
+    activeRoute: 'team',
+    component: <TeamMemberProfilePage onRouteChange={() => {}} />,
+    title: 'Aaisha | Quality Assurance & Testing Lead at Spark Station',
+    description: 'Official profile of Aaisha, Quality Assurance & Testing Lead at Spark Station. Managing website testing, bug detection, responsiveness, and pre-deployment QA.',
+    ogImage: `${BASE_URL}/apple-touch-icon.png`
+  },
+  {
+    path: '/sherya-jadon',
+    activeRoute: 'team',
+    component: <TeamMemberProfilePage onRouteChange={() => {}} />,
+    title: 'Sherya Jadon | Marketing & Quality Assurance Associate at Spark Station',
+    description: 'Official profile of Sherya Jadon, Marketing & Quality Assurance Associate at Spark Station. Supporting digital marketing operations, social content, and website testing.',
+    ogImage: `${BASE_URL}/apple-touch-icon.png`
+  },
+  {
     path: '/gwalior',
     activeRoute: 'home',
     component: <GwaliorPage onRouteChange={() => {}} />,
@@ -300,23 +332,11 @@ async function prerender() {
         </HelmetProvider>
       );
 
-      // 1. If it's home, write to dist/index.html and update root index.html
+      // 1. If it's home, write to dist/index.html
       if (route.path === '/') {
         const distHomeHtml = buildHtmlForRoute(distTemplate, route, bodyHtml);
         fs.writeFileSync(distIndexHtmlPath, distHomeHtml, 'utf-8');
         console.log(`✓ Updated ${distIndexHtmlPath} with ${bodyHtml.length} characters of initial HTML.`);
-
-        // Also update root index.html so dev server serves the pre-rendered content
-        // Clean any previous injected schema to avoid duplication
-        let cleanRootTemplate = rootTemplate;
-        const schemaRegex = /<script\s+type="application\/ld\+json">[\s\S]*?<\/script>/gi;
-        cleanRootTemplate = cleanRootTemplate.replace(schemaRegex, '');
-        // Reset root div if already populated
-        cleanRootTemplate = cleanRootTemplate.replace(/<div id="root">[\s\S]*?(<script type="module")/i, '<div id="root"></div>\n    $1');
-
-        const rootHomeHtml = buildHtmlForRoute(cleanRootTemplate, route, bodyHtml);
-        fs.writeFileSync(rootIndexHtmlPath, rootHomeHtml, 'utf-8');
-        console.log(`✓ Synchronized source ${rootIndexHtmlPath} with pre-rendered homepage & schema markup.`);
       } else {
         // Sub-route: write to dist/<path>/index.html
         const routePathClean = route.path.replace(/^\//, '');

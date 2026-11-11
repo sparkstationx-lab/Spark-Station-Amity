@@ -5,6 +5,7 @@ import { TEAM, AGENCY_INFO } from '../data/agencyData';
 import { PageRoute } from '../types';
 import { CTASection } from '../components/CTASection';
 import { SEO } from '../components/SEO';
+import { TeamMemberAvatar } from '../components/TeamMemberAvatar';
 
 interface TeamPageProps {
   onRouteChange: (route: PageRoute) => void;
@@ -56,8 +57,8 @@ export const TeamPage: React.FC<TeamPageProps> = ({ onRouteChange }) => {
       </section>
 
       {/* Team Grid */}
-      <section className="max-w-5xl mx-auto px-6 mb-24 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <section className="max-w-6xl mx-auto px-6 mb-24 relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {TEAM.map((member, mIdx) => (
             <div
               key={mIdx}
@@ -68,15 +69,13 @@ export const TeamPage: React.FC<TeamPageProps> = ({ onRouteChange }) => {
               className="ss-card overflow-hidden flex flex-col justify-between group hover:border-[#58A6FF]/60 cursor-pointer border-[#30363d]/80 hover:shadow-2xl hover:shadow-black/40 transition-all duration-300"
             >
               <div>
-                <div className="h-80 sm:h-96 overflow-hidden relative bg-[#21262d]">
-                  <img
-                    src={member.avatarUrl}
-                    alt={member.name}
-                    referrerPolicy="no-referrer"
-                    className={`w-full h-full object-cover ${member.slug === 'abhinav-sharma' ? 'object-top' : ''} group-hover:scale-105 transition-transform duration-700 ease-out`}
+                <div className="h-72 sm:h-80 overflow-hidden relative bg-[#21262d]">
+                  <TeamMemberAvatar
+                    member={member}
+                    imgClassName="group-hover:scale-105 transition-transform duration-700 ease-out"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#161b22] via-[#161b22]/20 to-transparent" />
-                  <div className="absolute bottom-4 left-5 right-5 flex items-end justify-between">
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#161b22] via-[#161b22]/20 to-transparent pointer-events-none" />
+                  <div className="absolute bottom-4 left-5 right-5 flex items-end justify-between pointer-events-none">
                     <span
                       className="text-xs px-3 py-1 rounded-full font-semibold border backdrop-blur-md"
                       style={{ background: `${member.color}20`, borderColor: `${member.color}60`, color: '#ffffff' }}

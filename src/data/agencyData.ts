@@ -327,6 +327,130 @@ export const TEAM: TeamMember[] = [
       linkedin: "https://www.linkedin.com",
       github: "https://github.com"
     }
+  },
+  {
+    slug: "sanidhya-yadav",
+    name: "Sanidhya Yadav",
+    role: "Business Development & Client Relations",
+    bio: "Handles business networking, strategic partnerships, client communication and relationship management at Spark Station.",
+    tagline: "Strategic Partnerships & Client Relations Lead.",
+    aboutLong: "Sanidhya Yadav leads Business Development & Client Relations at Spark Station. He is dedicated to creating long-term strategic value for clients through clear communication, relationship management, and business networking. Sanidhya bridges client vision with technical execution.",
+    experience: "Business & Client Strategy",
+    contact: "mailto:sparkstation.x@gmail.com",
+    skills: ["Business Development", "Client Relations", "Strategic Partnerships", "Account Management", "Growth Strategy", "Client Support"],
+    color: "#A855F7",
+    avatarUrl: "initials:SY",
+    responsibilities: [
+      "Client Communication & Onboarding",
+      "Strategic Business Partnerships",
+      "Project Requirement Gathering",
+      "Relationship Management & Support"
+    ],
+    experienceList: [
+      {
+        role: "Business Development & Client Relations Lead",
+        company: "Spark Station",
+        period: "2024 - Present",
+        desc: "Managing client relations, corporate partnerships, and business development for digital web solutions."
+      }
+    ],
+    socials: {
+      email: "sparkstation.x@gmail.com",
+      linkedin: "https://www.linkedin.com"
+    }
+  },
+  {
+    slug: "ananya-raje-singh",
+    name: "Ananya Raje Singh",
+    role: "Marketing & Growth Manager",
+    bio: "Responsible for digital marketing, brand promotion, social media strategy, SEO campaigns and business growth initiatives.",
+    tagline: "Digital Marketing & Growth Strategist.",
+    aboutLong: "Ananya Raje Singh is the Marketing & Growth Manager at Spark Station. She specializes in crafting multi-channel digital marketing campaigns, brand positioning, content strategies, and SEO growth tactics that turn client web assets into lead-generation engines.",
+    experience: "Digital Marketing & SEO",
+    contact: "mailto:sparkstation.x@gmail.com",
+    skills: ["Digital Marketing", "Brand Strategy", "Social Media Marketing", "SEO Campaigns", "Growth Hacking", "Content Strategy"],
+    color: "#F778BA",
+    avatarUrl: "initials:AR",
+    responsibilities: [
+      "Digital Marketing Campaign Strategy",
+      "Social Media & Brand Management",
+      "Search Engine Optimization (SEO)",
+      "Growth Hacking & Analytics"
+    ],
+    experienceList: [
+      {
+        role: "Marketing & Growth Manager",
+        company: "Spark Station",
+        period: "2024 - Present",
+        desc: "Driving digital marketing campaigns, brand awareness, and SEO execution for client projects."
+      }
+    ],
+    socials: {
+      email: "sparkstation.x@gmail.com",
+      linkedin: "https://www.linkedin.com"
+    }
+  },
+  {
+    slug: "aaisha",
+    name: "Aaisha",
+    role: "Quality Assurance & Testing Lead",
+    bio: "Responsible for website testing, bug detection, functionality checks, responsiveness and quality assurance before project delivery.",
+    tagline: "Software Quality Assurance & Performance Testing Lead.",
+    aboutLong: "Aaisha is the Quality Assurance & Testing Lead at Spark Station. She enforces strict quality standards across all web deliverables through rigorous cross-browser testing, functional audits, performance benchmarking, and bug verification before final deployment.",
+    experience: "QA & Software Testing",
+    contact: "mailto:sparkstation.x@gmail.com",
+    skills: ["Quality Assurance", "Web Testing", "Bug Tracking & Detection", "Responsiveness Audits", "Cross-Browser Compatibility", "UI/UX QA"],
+    color: "#34D399",
+    avatarUrl: "initials:AA",
+    responsibilities: [
+      "Website Functionality & Stress Testing",
+      "Cross-Device Responsiveness Verification",
+      "Bug Detection & Issue Tracking",
+      "Pre-Launch Quality Sign-Off"
+    ],
+    experienceList: [
+      {
+        role: "Quality Assurance & Testing Lead",
+        company: "Spark Station",
+        period: "2024 - Present",
+        desc: "Leading quality assurance, responsive design testing, and pre-deployment software verification."
+      }
+    ],
+    socials: {
+      email: "sparkstation.x@gmail.com",
+      linkedin: "https://www.linkedin.com"
+    }
+  },
+  {
+    slug: "sherya-jadon",
+    name: "Sherya Jadon",
+    role: "Marketing & Quality Assurance Associate",
+    bio: "Supports marketing campaigns, social media content creation, website testing and quality assurance activities.",
+    tagline: "Marketing Operations & Quality Assurance Associate.",
+    aboutLong: "Sherya Jadon is a Marketing & Quality Assurance Associate at Spark Station. Combining creative content execution with analytical QA testing, Sherya supports digital marketing campaigns, social media management, and client website testing.",
+    experience: "Marketing & QA Support",
+    contact: "mailto:sparkstation.x@gmail.com",
+    skills: ["Marketing Support", "Social Media Content", "Website Testing", "Quality Assurance", "Content Operations", "User Experience Audit"],
+    color: "#F59E0B",
+    avatarUrl: "initials:SJ",
+    responsibilities: [
+      "Social Media Content & Campaign Execution",
+      "Website User Experience & Functionality Testing",
+      "Marketing Asset Creation & Promotion",
+      "Quality Assurance Support & Issue Logging"
+    ],
+    experienceList: [
+      {
+        role: "Marketing & QA Associate",
+        company: "Spark Station",
+        period: "2024 - Present",
+        desc: "Supporting digital marketing operations, content creation, and website QA testing."
+      }
+    ],
+    socials: {
+      email: "sparkstation.x@gmail.com",
+      linkedin: "https://www.linkedin.com"
+    }
   }
 ];
 

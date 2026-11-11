@@ -20,6 +20,7 @@ import { TEAM } from '../data/agencyData';
 import { SEO } from '../components/SEO';
 import { PageRoute } from '../types';
 import { LinkedInBadge } from '../components/LinkedInBadge';
+import { TeamMemberAvatar } from '../components/TeamMemberAvatar';
 
 interface TeamMemberProfilePageProps {
   onRouteChange: (route: PageRoute) => void;
@@ -140,12 +141,9 @@ export const TeamMemberProfilePage: React.FC<TeamMemberProfilePageProps> = ({ on
               <div className="absolute -inset-1 rounded-2xl bg-gradient-to-r opacity-50 blur-md transition duration-500 group-hover/avatar:opacity-75"
                    style={{ backgroundImage: `linear-gradient(135deg, ${member.color} 0%, #8B5CF6 100%)` }} />
               <div className="relative w-48 h-48 md:w-56 md:h-56 rounded-2xl overflow-hidden bg-[#21262d] border border-[#30363d]">
-                <img 
-                  src={member.avatarUrl} 
-                  alt={member.name} 
-                  referrerPolicy="no-referrer"
-                  className={`w-full h-full object-cover ${member.slug === 'abhinav-sharma' ? 'object-top' : ''} transition duration-700 ease-out group-hover/avatar:scale-105`}
-                  loading="lazy"
+                <TeamMemberAvatar
+                  member={member}
+                  imgClassName="transition duration-700 ease-out group-hover/avatar:scale-105"
                 />
               </div>
             </div>
